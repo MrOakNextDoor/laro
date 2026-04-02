@@ -1,0 +1,17 @@
+[project]
+name = "laro"
+version = "0.0.1"
+dependencies = ["pygame-ce", "moderngl"]
+authors = [
+    {name = "Keon Echevarria", email="keon.echevarria@gmail.com"},
+]
+description = "A library that extends pygame's functionality."
+readme = "README.md"
+requires-python = ">=3.14"
+license = "MIT"
+
+[project.optional-dependencies]
+dev = ["Cython>=3.0.0", "build", "setuptools"]
+
+[build-system]
+requires = ["setuptools", "Cython>=3.0.0"]
