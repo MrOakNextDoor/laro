@@ -1,11 +1,17 @@
 
-# Determines what modules are imported when "from laro import *" is done.
+# Determines what modules are imported when a wildcard import (i.e. "from laro import *") is done.
+# NOTE: Modules that are added here must also be added to the stub file.
 __all__ = (
-    "misc",
+    "misc", # type: ignore
+    # "Clock",
 )
 
-# Put all the modules below as "from . import [module name]"
+# Because of the lines below, we prevent modules from being imported when laro is used as a CLI.
+import importlib
 
-# Miscellaneous module:
-from . import misc
-from .misc import Clock # Allows the clock to be imported either as laro.misc.Clock or laro.Clock.
+def __getattr__(name):
+    if name in __all__:
+        module = importlib.import_module(f".{name}", __name__)
+        globals()[name] = module
+        return module
+    raise AttributeError(f"Module {__name__!r} has no attribute {name!r}.")

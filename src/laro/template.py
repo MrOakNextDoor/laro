@@ -9,7 +9,7 @@ import sys
 # Code
 class Game:
     def __init__(self, 
-        display_title: str="Pygame Window", 
+        display_title: str="Laro Window", 
         debug: bool=False, 
         icon: pygame.Surface | None = None) -> None:
         
@@ -21,7 +21,7 @@ class Game:
         self.display: pygame.Surface = pygame.display.set_mode(
             (500, 400), 
             pygame.RESIZABLE)
-        self.clock: laro.Clock = laro.Clock(60)
+        self.clock: laro.misc.Clock = laro.misc.Clock(60)
         self.running: bool = False
 
     # Game Attributes

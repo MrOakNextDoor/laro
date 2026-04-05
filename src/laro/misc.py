@@ -6,7 +6,7 @@ import pygame
 
 # Code
 class Clock:
-    def __init__(self, framerate: int = 300):
+    def __init__(self, framerate: int = 300) -> None:
         
         self._clock: pygame.Clock = pygame.Clock()
         self.framerate = framerate
