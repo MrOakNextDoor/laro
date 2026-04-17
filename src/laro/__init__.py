@@ -2,8 +2,9 @@
 # Determines what modules are imported when a wildcard import (i.e. "from laro import *") is done.
 # NOTE: Modules that are added here must also be added to the stub file.
 __all__ = (
-    "misc", # type: ignore
+    "assets", # type: ignore
     "game", # type: ignore
+    "misc", # type: ignore
 )
 __version__: str = "0.1.0"
 
