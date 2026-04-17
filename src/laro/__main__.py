@@ -4,7 +4,6 @@
 # purposes* which can be impractical in some situations.
 import os
 import sys
-from . import cli
 
 if not __package__:
     # Make CLI runnable from source tree with
@@ -12,4 +11,5 @@ if not __package__:
     package_source_path = os.path.dirname(os.path.dirname(__file__))
     sys.path.insert(0, package_source_path)
 
+from . import cli
 cli.cli()   # CLI access.

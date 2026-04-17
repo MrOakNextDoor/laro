@@ -15,6 +15,7 @@ license = "MIT"
 license-files = ["LICEN[CS]E.*"]
 keywords = [
     "pygame",
+    "Game development,"
 ]
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",    # Change when stable release is present.
@@ -25,7 +26,9 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Topic :: Games/Entertainment"
 ]
-version = "0.1.0"
+dynamic = [
+    "version",
+]
 
 [project.scripts]
 # Enter a cli here.

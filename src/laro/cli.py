@@ -4,13 +4,14 @@
 
 # Libraries
 import click
-from shutil import copyfile
-import os, sys
+# from shutil import copyfile
+# import os, sys
 
 # Code
 @click.group()
 def cli() -> None:
     # We'd preferrably have a welcome message here.
+    # from .__init__ import __version__
     pass
 
 # Define commands here:

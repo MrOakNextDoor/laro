@@ -3,12 +3,14 @@
 import pygame
 import laro
 import moderngl
-
 import sys
+
+from typing import Optional
+from collections.abc import Callable
 
 # Code
 class Game:
-    def __init__(self, 
+    def __init__(self, *,
         display_title: str="Laro Window", 
         debug: bool=False, 
         icon: pygame.Surface | None = None) -> None:
@@ -56,16 +58,14 @@ class Game:
         self.quit()
 
     # Functions
-    def start(self) -> None:
+    def start(self, *args, **kwds) -> None:
         self.running = True
 
         if self.debug:
             # Enter additional debug code here.
             pass
 
-        # Enter normal code here.
-
-    def check_events(self) -> None:
+    def check_events(self, *args, **kwds) -> None:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
@@ -73,10 +73,13 @@ class Game:
             # Enter normal event checking here.
             
             if self.debug:
-                # Enter additional debug code here. 
-                pass
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        self.running = False
 
-    def update(self) -> None:
+                # Enter additional debug code here. 
+
+    def update(self, *args, **kwds) -> None:
         self.clock.tick()
 
         if self.debug:
@@ -85,7 +88,7 @@ class Game:
 
         # Enter normal code here.
 
-    def render(self) -> None:
+    def render(self, *args, **kwds) -> None:
         if self.debug:
             # Fills the screen with an obnoxious purple colour during debug.
             # This code might be changed as I implement moderngl.
@@ -100,7 +103,7 @@ class Game:
 
         pygame.display.flip()
 
-    def quit(self) -> None:
+    def quit(self, *args, **kwds) -> None:
         if self.debug:
             # Enter additional debug code here. 
             pass
