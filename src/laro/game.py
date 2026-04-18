@@ -10,6 +10,7 @@ from collections.abc import Callable
 
 # Code
 class Game:
+    # Magic Methods
     def __init__(self, *,
         display_title: str="Laro Window", 
         debug: bool=False, 
@@ -114,6 +115,9 @@ class Game:
         sys.exit()
 
 # Run
-if __name__ == "__main__":
+def _test() -> None:
     g = Game()
     g()
+
+if __name__ == "__main__":
+    _test()

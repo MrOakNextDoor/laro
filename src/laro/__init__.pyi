@@ -4,4 +4,5 @@
 
 from . import assets
 from . import game
+from . import gameobject
 from . import misc

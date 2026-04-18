@@ -4,6 +4,7 @@
 __all__ = (
     "assets", # type: ignore
     "game", # type: ignore
+    "gameobject", # type: ignore
     "misc", # type: ignore
 )
 __version__: str = "0.1.0"
